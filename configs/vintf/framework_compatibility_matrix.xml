@@ -1,0 +1,131 @@
+<compatibility-matrix version="1.0" type="framework">
+    <hal format="hidl" optional="true">
+        <name>vendor.oplus.hardware.biometrics.fingerprint</name>
+        <version>2.1</version>
+        <interface>
+            <name>IBiometricsFingerprint</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+        <hal format="hidl" optional="true">
+        <name>vendor.pixelworks.hardware.display</name>
+        <version>1.0-2</version>
+        <interface>
+            <name>IIris</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.pixelworks.hardware.display</name>
+        <interface>
+            <name>IIris</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+        <hal format="hidl" optional="true">
+        <name>vendor.pixelworks.hardware.feature</name>
+        <version>1.0-1</version>
+        <interface>
+            <name>IIrisFeature</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.pixelworks.hardware.feature</name>
+        <interface>
+            <name>IIrisFeature</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+        <hal format="hidl" optional="true">
+        <name>android.hardware.health</name>
+        <version>2.1</version>
+        <interface>
+            <name>IHealth</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+        <hal format="aidl" optional="true">
+        <name>android.hardware.light</name>
+        <interface>
+            <name>ILights</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+        <hal format="aidl" optional="true">
+        <name>vendor.oplus.hardware.subsys_interface.subsys</name>
+        <interface>
+            <name>ISubsys</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.oplus.hardware.subsys_interface.subsys_radio</name>
+        <interface>
+            <name>ISubsysRadio</name>
+            <instance>slot1</instance>
+            <instance>slot2</instance>
+        </interface>
+    </hal>
+        <hal format="aidl" optional="true">
+        <name>vendor.oplus.hardware.performance</name>
+        <interface>
+            <name>IPerformance</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+        <hal format="hidl" optional="true">
+        <name>vendor.oplus.hardware.cwb</name>
+        <version>1.0</version>
+        <interface>
+            <name>ICwbService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.oplus.hardware.cwb</name>
+        <interface>
+            <name>ICwbService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+        <hal format="aidl" optional="true">
+        <name>vendor.oplus.hardware.communicationcenter</name>
+        <interface>
+            <name>IDmtpService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oplus.hardware.communicationcenter_compat</name>
+        <version>1.0</version>
+        <interface>
+            <name>IDmtpService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+        <hal format="hidl" optional="true">
+        <name>vendor.oplus.hardware.cameraextension</name>
+        <version>1.0</version>
+        <interface>
+            <name>ICameraExtensionService</name>
+            <instance>cameraextensionservice</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.oplus.hardware.cameraextension</name>
+        <interface>
+            <name>ICameraExtensionService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+        <hal format="hidl">
+        <name>vendor.goodix.hardware.biometrics.fingerprint</name>
+        <transport>hwbinder</transport>
+        <version>2.1</version>
+        <interface>
+            <name>IGoodixFingerprintDaemon</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</compatibility-matrix>
