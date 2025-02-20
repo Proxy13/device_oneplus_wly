@@ -83,6 +83,8 @@ PRODUCT_PACKAGES += \
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
+TARGET_BOARD_PLATFORM := taro
+
 # Dex
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
@@ -97,7 +99,7 @@ PRODUCT_PACKAGES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH) \
+    $(DEVICE_PATH) \
     hardware/oplus
 
 # Partitions - Dynamic
@@ -204,7 +206,7 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf
+    $(DEVICE_PATH)/configs/gps/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf
 
 PRODUCT_PACKAGES += \
     android.hardware.gnss-V1-ndk_platform.vendor
@@ -218,7 +220,7 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
+    $(DEVICE_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
 
 PRODUCT_PACKAGES += \
     fstab.qcom \
@@ -231,11 +233,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
 # HIDL - FCM 
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
-   $(COMMON_PATH)/configs/vintf/framework_compatibility_matrix.xml
+   $(DEVICE_PATH)/configs/vintf/framework_compatibility_matrix.xml
 
 DEVICE_MANIFEST_FILE += \
-    $(COMMON_PATH)/configs/vintf/taro_manifest.xml \
-    $(COMMON_PATH)/configs/vintf/wly_manifest.xml
+    $(DEVICE_PATH)/configs/vintf/taro_manifest.xml \
+    $(DEVICE_PATH)/configs/vintf/wly_manifest.xml
 
 # Keymaster
 PRODUCT_COPY_FILES += \
@@ -406,3 +408,5 @@ PRODUCT_COPY_FILES += \
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/oneplus/wly/wly-vendor.mk)
+# Inherit from the proprietary files makefile.
+$(call inherit-product, vendor/oneplus/sm8450-common/sm8450-common-vendor.mk)
