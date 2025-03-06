@@ -6,8 +6,8 @@ HARDWARE_PATH := hardware/oplus
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # A/B
-ENABLE_VIRTUAL_AB := true
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -33,7 +33,6 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script \
     update_engine_sideload
-
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
@@ -220,16 +219,13 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
+    $(LOCAL_PATH)/init/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
 
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.target.rc \
     init.oplus.rc \
     ueventd.oplus.rc
-
-# Generic ramdisk
-$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
 # HIDL - FCM 
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
@@ -408,5 +404,3 @@ PRODUCT_COPY_FILES += \
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/oneplus/wly/wly-vendor.mk)
-# Inherit from the proprietary files makefile.
-$(call inherit-product, vendor/oneplus/sm8450-common/sm8450-common-vendor.mk)

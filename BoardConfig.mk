@@ -97,13 +97,16 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOT_HEADER_VERSION)
 
-BOARD_KERNEL_CMDLINE := \
-    mtdoops.fingerprint=$(AOSPA_VERSION) \
-    swinfo.fingerprint=$(AOSPA_VERSION) \
-    msm_geni_serial.con_enabled=0 \
-    allow_file_spec_access \
-    irqaffinity=0-3 \
-    pelt=8
+#BOARD_KERNEL_CMDLINE := \
+#    mtdoops.fingerprint=$(AOSPA_VERSION) \
+#    swinfo.fingerprint=$(AOSPA_VERSION) \
+#    msm_geni_serial.con_enabled=0 \
+#    allow_file_spec_access \
+#    irqaffinity=0-3 \
+#    pelt=8
+
+BOARD_KERNEL_CMDLINE := msm_geni_serial.con_enabled=0
+
 
 BOARD_BOOTCONFIG:= \
     androidboot.hardware=qcom \
@@ -115,7 +118,6 @@ BOARD_BOOTCONFIG += androidboot.selinux=permissive
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
-TARGET_BOARD_PLATFORM := taro
 
 # Partitions - Dynamic
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_ext vendor vendor_dlkm
@@ -150,6 +152,8 @@ BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 201326592
 BOARD_USES_METADATA_PARTITION := true
 BOARD_USES_VENDOR_DLKMIMAGE := true
 
+LOCAL_CHECK_ELF_FILES := false
+
 # Recovery
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 BOARD_EXT4_SHARE_DUP_BLOCKS := true
@@ -169,7 +173,7 @@ TARGET_POWERSHARE_NODE := /sys/class/qcom-battery/wireless_boost_en
 ENABLE_VENDOR_RIL_SERVICE := true
 
 # Security
-BOOT_SECURITY_PATCH := 2024-07-05
+BOOT_SECURITY_PATCH := 2025-01-01
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
 # SEPolicy
