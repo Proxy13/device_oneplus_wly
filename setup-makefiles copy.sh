@@ -43,11 +43,13 @@ function lib_to_package_fixup_vendor_variants() {
     fi
 
     case "$1" in
-            com.qualcomm.qti.dpm.api* | \
+            com.qualcomm.qti.dpm.api@1.0 | \
             com.qualcomm.qti.imscmservice* | \
             com.qualcomm.qti.uceservice* | \
             vendor.qti.data.* | \
             vendor.qti.diaghal@1.0 | \
+            vendor.qti.hardware.data.* | \
+            vendor.qti.hardware.dpmservice* |\
             vendor.qti.hardware.embmssl* | \
             vendor.qti.hardware.limits* | \
             vendor.qti.hardware.ListenSoundModel@1.0 | \
@@ -58,26 +60,8 @@ function lib_to_package_fixup_vendor_variants() {
             vendor.qti.hardware.radio.* | \
             vendor.qti.hardware.slmadapter@1.0 | \
             vendor.qti.hardware.wifidisplaysession@1.0 | \
-            vendor.qti.imsrtpservice@3.0* | \
-            vendor.qti.hardware.radio.lpa* | \
-            vendor.qti.ims* | \
-            vendor.qti.hardware.data.cne.internal.api* | \
-            vendor.qti.hardware.data.cne.internal.constants* | \
-            vendor.qti.hardware.data.dynamicdds* | \
-            vendor.qti.hardware.data.cne.internal.server* | \
-            vendor.qti.hardware.data.qmi* | \
-            vendor.qti.hardware.data.lce* | \
-            vendor.qti.hardware.data.flow@1.0* | \
-            vendor.qti.hardware.data.latency@1.0* | \
-            vendor.qti.hardware.data.ka-V1-ndk_platform* | \
-            vendor.qti.hardware.data.dataactivity-V1-ndk_platform* | \
-            vendor.qti.hardware.data.connectionfactory-V1-ndk_platform* | \
-            vendor.qti.hardware.data.connection@1.0* | \
-            vendor.qti.hardware.data.connection@1.1* | \
-            vendor.qti.hardware.data.iwlan@1.0* | \
-            vendor.qti.hardware.data.iwlan@1.1* | \
-            vendor.qti.hardware.dpmservice@1.0* | \
-            vendor.qti.hardware.dpmservice@1.1* | \
+            vendor.qti.imsrtpservice@3.0 | \
+            vendor.qti.ims.* | \
             vendor.qti.latency*)
             echo "$1_vendor"
             ;;

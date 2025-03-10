@@ -118,7 +118,7 @@ vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 vendor/etc/models/acd/event.eai
 vendor/etc/models/acd/music.eai
 vendor/etc/models/acd/speech.eai
-vendor/lib64/hw/audio.primary.taro.so
+vendor/lib64/hw/audio.primary.taro.so;MODULE_SUFFIX=_phone2;OVERRIDES=audio.primary.taro
 vendor/lib64/hw/sound_trigger.primary.taro.so
 vendor/lib64/libadm.so
 vendor/lib64/libar-acdb.so
@@ -168,6 +168,20 @@ vendor/lib64/vendor.qti.hardware.AGMIPC@1.0-impl.so
 vendor/lib64/vendor.oplus.hardware.performance-V1-ndk_platform.so
 
 # Audio (Configurations)
+vendor/etc/audio/sku_cape/audio_effects.conf
+vendor/etc/audio/sku_cape/audio_policy_configuration.xml
+vendor/etc/audio/sku_cape/audio_policy_volumes.xml
+vendor/etc/audio/sku_cape/default_volume_tables.xml
+vendor/etc/audio/sku_cape/mixer_paths_waipio_cdp.xml
+vendor/etc/audio/sku_cape/mixer_paths_waipio_mtp.xml
+vendor/etc/audio/sku_cape/mixer_paths_waipio_qrd.xml
+vendor/etc/audio/sku_cape/r_submix_audio_policy_configuration.xml
+vendor/etc/audio/sku_cape/resourcemanager_upd.xml
+vendor/etc/audio/sku_cape/resourcemanager_waipio_cdp.xml
+vendor/etc/audio/sku_cape/resourcemanager_waipio_mtp.xml
+vendor/etc/audio/sku_cape/resourcemanager_waipio_qrd.xml
+vendor/etc/audio/sku_cape_qssi/audio_policy_volumes.xml
+vendor/etc/audio/sku_cape_qssi/default_volume_tables.xml
 vendor/etc/audio/sku_taro/audio_effects.conf
 vendor/etc/audio/sku_taro/audio_effects.xml
 vendor/etc/audio/sku_taro/audio_policy_configuration.xml
@@ -1407,7 +1421,7 @@ vendor/lib64/vendor.oplus.hardware.cammidasservice@1.0.so
 vendor/lib64/vendor.oplus.hardware.sendextcamcmd-V2-ndk_platform.so
 vendor/lib64/vendor.qti.hardware.camera.aon@1.0-service-impl.so
 vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
-vendor/lib64/vendor.qti.hardware.display.config-V2-ndk_platform.so;MODULE_SUFFIX=_vendor
+vendor/lib64/vendor.qti.hardware.display.config-V2-ndk_platform.so
 
 # Camera firmware
 vendor/firmware/CAMERA_ICP.b00
@@ -1499,6 +1513,10 @@ vendor/lib64/libwms.so
 vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
 vendor/lib64/vendor.libmwqemiptablemgr.so
+vendor/lib64/vendor.libdpmframework.so
+vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so;MODULE_SUFFIX=_vendor
+vendor/lib64/vendor.qti.hardware.dpmservice@1.0.so
+vendor/lib64/vendor.qti.hardware.dpmservice@1.1.so
 vendor/lib64/vendor.qti.data.factory@2.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.data.factory@2.1.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.data.factory@2.2.so;MODULE_SUFFIX=_vendor
@@ -1523,21 +1541,6 @@ vendor/lib64/vendor.qti.hardware.mwqemadapter@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.slmadapter@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.latency@2.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.latency@2.1.so;MODULE_SUFFIX=_vendor
-
-# DPM
-vendor/bin/dpmQmiMgr
-vendor/bin/vendor.dpmd
-vendor/etc/dpm_vndr/vendor.dpm.conf
-vendor/etc/init/dpmQmiMgr.rc
-vendor/etc/init/vendor.dpmd.rc
-vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so;MODULE_SUFFIX=_vendor
-vendor/lib64/libdpmqmihal.so
-vendor/lib64/vendor.libdpmctmgr.so
-vendor/lib64/vendor.libdpmfdmgr.so
-vendor/lib64/vendor.libdpmframework.so
-vendor/lib64/vendor.libdpmtcm.so
-vendor/lib64/vendor.qti.hardware.dpmservice@1.0.so;MODULE_SUFFIX=_vendor
-vendor/lib64/vendor.qti.hardware.dpmservice@1.1.so;MODULE_SUFFIX=_vendor
 
 # Configstore
 vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service
@@ -1604,6 +1607,7 @@ vendor/etc/Oplus_QC_LTM_SM8475_2022_07_05.pfm
 vendor/lib64/libPanelChaplin.so
 
 # Display (HDR)
+vendor/lib64/libhdr_tm.so
 vendor/lib64/libhdrdynamic.so
 vendor/lib64/libhdrdynamicootf.so
 
@@ -1611,19 +1615,21 @@ vendor/lib64/libhdrdynamicootf.so
 odm/etc/vintf/manifest/manifest_oplus_cwb.xml
 odm/lib64/vendor.oplus.hardware.cwb@1.0.so
 vendor/bin/hw/vendor.qti.hardware.display.composer-service
+vendor/bin/qdcmss
 vendor/etc/init/qdcmss.rc
 vendor/etc/snapdragon_color_libs_config.xml
 vendor/lib64/libcwb_qcom.so
-vendor/lib64/libgame_enhance.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libgame_enhance.so
 vendor/lib64/libhistogram.so
-vendor/lib64/libmemutils.so;MODULE_SUFFIX=_vendor
-vendor/lib64/libqdcm-json-mode-parser.so;MODULE_SUFFIX=_vendor
-vendor/lib64/libqdcm-mode-parser.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libmemutils.so
+vendor/lib64/libqdcm-algo.so
+vendor/lib64/libqdcm-json-mode-parser.so
+vendor/lib64/libqdcm-mode-parser.so
 vendor/lib64/libqdutils.so
 vendor/lib64/libsdmcore.so
 vendor/lib64/libsdmutils.so
-vendor/lib64/libsnapdragoncolor-manager.so;MODULE_SUFFIX=_vendor
-vendor/lib64/libsnapdragoncolor-qdcm.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libsnapdragoncolor-manager.so
+vendor/lib64/libsnapdragoncolor-qdcm.so
 vendor/lib64/vendor.oplus.hardware.cwb@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
@@ -1695,6 +1701,21 @@ vendor/etc/display/qdcm_calib_data_samsung_S6E3HC3_dsc_cmd_mode_panel_21631.json
 vendor/etc/ltm_config_samsung_S6E3HC3_dsc_cmd_mode_panel.xml
 vendor/etc/ltm_config_samsung_S6E3HC3_dsc_cmd_mode_panel_21631.xml
 
+# Display postprocessing
+vendor/bin/hw/vendor.display.color@1.0-service
+vendor/bin/ppd
+vendor/etc/init/vendor.display.color@1.0-service.rc
+vendor/lib64/libdisp-aba.so;MODULE_SUFFIX=_vendor
+vendor/lib64/vendor.display.color@1.0.so
+vendor/lib64/vendor.display.color@1.1.so
+vendor/lib64/vendor.display.color@1.2.so
+vendor/lib64/vendor.display.color@1.3.so
+vendor/lib64/vendor.display.color@1.4.so
+vendor/lib64/vendor.display.color@1.5.so
+vendor/lib64/vendor.display.color@1.6.so
+vendor/lib64/vendor.display.color@1.7.so
+vendor/lib64/vendor.display.postproc@1.0.so
+
 # DSP
 vendor/bin/dspservice
 vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc
@@ -1735,7 +1756,7 @@ vendor/lib64/libscveCommon_stub.so
 vendor/lib64/libscveObjectSegmentation.so
 vendor/lib64/libscveObjectTracker.so
 vendor/lib64/libscveObjectTracker_stub.so
-vendor/lib64/libvideoutils.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libvideoutils.so
 
 # EVA (firmware)
 vendor/firmware/evass-lt-21.b00
@@ -1832,6 +1853,7 @@ vendor/lib64/libgps.utils.so
 # GNSS
 odm/etc/izat.conf
 odm/etc/sap.conf
+vendor/bin/hw/android.hardware.gnss-aidl-service-qti
 vendor/bin/edgnss-daemon
 vendor/bin/engine-service
 vendor/bin/garden_app
@@ -1861,6 +1883,8 @@ vendor/etc/lowi.conf
 vendor/etc/sap.conf
 vendor/etc/xtra_root_cert.pem
 vendor/etc/xtwifi.conf
+vendor/lib64/hw/android.hardware.gnss-aidl-impl-qti.so
+vendor/lib64/hw/android.hardware.gnss@2.1-impl-qti.so
 vendor/lib64/libasn1cper.so
 vendor/lib64/libasn1crt.so
 vendor/lib64/libasn1crtx.so
@@ -2025,6 +2049,7 @@ vendor/etc/media_codecs_vendor_audio.xml
 vendor/etc/media_profiles.xml
 vendor/etc/media_profiles_V1_0.xml
 vendor/etc/media_profiles_cape.xml
+system_ext/lib64/libmmosal.so
 vendor/lib64/libmmosal_vendor.so
 
 # Memory
@@ -2191,6 +2216,8 @@ odm/lib64/libdmtpclient.so
 system_ext/etc/permissions/qcrilhook.xml
 system_ext/etc/permissions/qti_libpermissions.xml
 system_ext/etc/permissions/qti_permissions.xml
+system_ext/framework/qcrilhook.jar
+system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/hw/qcrilNrd
 vendor/bin/ks
 vendor/bin/qtigetprop
@@ -2260,13 +2287,13 @@ vendor/lib64/vendor.oplus.hardware.appradioaidl-V1-ndk_platform.so
 vendor/lib64/vendor.oplus.hardware.communicationcenter-V1-ndk_platform.so
 vendor/lib64/vendor.oplus.hardware.communicationcenter-V2-ndk_platform.so
 vendor/lib64/vendor.oplus.hardware.radio-V2-ndk_platform.so
-vendor/lib64/vendor.qti.hardware.data.connection@1.0.so;MODULE_SUFFIX=_vendor
-vendor/lib64/vendor.qti.hardware.data.connection@1.1.so;MODULE_SUFFIX=_vendor
-vendor/lib64/vendor.qti.hardware.data.connectionfactory-V1-ndk_platform.so;MODULE_SUFFIX=_vendor
-vendor/lib64/vendor.qti.hardware.data.dataactivity-V1-ndk_platform.so;MODULE_SUFFIX=_vendor
-vendor/lib64/vendor.qti.hardware.data.iwlan@1.0.so;MODULE_SUFFIX=_vendor
-vendor/lib64/vendor.qti.hardware.data.iwlan@1.1.so;MODULE_SUFFIX=_vendor
-vendor/lib64/vendor.qti.hardware.data.ka-V1-ndk_platform.so;MODULE_SUFFIX=_vendor
+vendor/lib64/vendor.qti.hardware.data.connection@1.0.so
+vendor/lib64/vendor.qti.hardware.data.connection@1.1.so
+vendor/lib64/vendor.qti.hardware.data.connectionfactory-V1-ndk_platform.so
+vendor/lib64/vendor.qti.hardware.data.dataactivity-V1-ndk_platform.so
+vendor/lib64/vendor.qti.hardware.data.iwlan@1.0.so
+vendor/lib64/vendor.qti.hardware.data.iwlan@1.1.so
+vendor/lib64/vendor.qti.hardware.data.ka-V1-ndk_platform.so
 vendor/lib64/vendor.qti.hardware.radio.am@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.radio.internal.deviceinfo@1.0.so;MODULE_SUFFIX=_vendor
@@ -2292,6 +2319,17 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so;MODULE_SUFFIX=_v
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.radio.ims-V7-ndk_platform.so;MODULE_SUFFIX=_vendor
+
+# RIL - UIM
+product/app/uimgbaservice/uimgbaservice.apk
+product/etc/permissions/UimGba.xml
+product/etc/permissions/UimGbaManager.xml
+product/etc/permissions/UimService.xml
+product/framework/uimgbalibrary.jar
+product/framework/uimgbamanagerlibrary.jar
+product/framework/uimservicelibrary.jar
+
+
 
 # Sensors
 odm/bin/oplus_sensor_fb
@@ -2561,9 +2599,18 @@ vendor/etc/init/vendor.qti.hardware.vibrator.service.rc
 vendor/etc/vintf/manifest/vendor.qti.hardware.vibrator.service.xml
 vendor/lib64/hw/vibrator.default.so
 vendor/lib64/libaacvibrator.so
+vendor/lib64/libqtivibratoreffect.so
 vendor/lib64/libsivibrator.so
-vendor/lib64/vendor.aac.hardware.richtap.vibrator-V1-ndk_platform.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libvibrator.so
+vendor/lib64/vendor.aac.hardware.richtap.vibrator-V1-ndk_platform.so
 vendor/lib64/vendor.qti.hardware.vibrator.impl.so
+
+# Vibrator (firmware)
+vendor/firmware/haptic_ram.bin
+vendor/firmware/haptic_rtp.bin
+vendor/firmware/haptic_rtp_lighthouse.bin
+vendor/firmware/haptic_rtp_osc_24K_5s.bin
+vendor/firmware/haptic_rtp_silk.bin
 
 # VPP
 vendor/bin/vppservice
@@ -2623,6 +2670,29 @@ vendor/etc/wifi/vendor_cmd.xml
 vendor/etc/wifi/wpa_supplicant_overlay.conf
 
 # WiFi Display
+system_ext/etc/init/wfdservice.rc
+system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml
+system_ext/etc/wfdconfigsink.xml
+system_ext/lib64/libwfdnative.so;DISABLE_CHECKELF;SYMLINK=system_ext/priv-app/WfdService/lib64/arm64/libwfdnative.so
+system_ext/lib64/libmmrtpdecoder.so;DISABLE_CHECKELF;SYMLINK=system_ext/priv-app/WfdService/lib64/arm64/libmmrtpdecoder.so
+system_ext/lib64/libmmrtpencoder.so;DISABLE_CHECKELF;SYMLINK=system_ext/priv-app/WfdService/lib64/arm64/libmmrtpencoder.so
+system_ext/lib64/libwfdavenhancements.so
+system_ext/lib64/libwfdclient.so
+system_ext/lib64/libwfdcommonutils.so
+system_ext/lib64/libwfdconfigutils.so
+system_ext/lib64/libwfddisplayconfig.so
+system_ext/lib64/libwfdmminterface.so;DISABLE_CHECKELF;SYMLINK=system_ext/priv-app/WfdService/lib64/arm64/libwfdmminterface.so
+system_ext/lib64/libwfdmmsink.so
+system_ext/lib64/libmmparser_lite.so
+system_ext/lib64/libwfdmmsrc_system.so;DISABLE_CHECKELF
+system_ext/lib64/libwfdrtsp.so
+system_ext/lib64/libwfdsinksm.so
+system_ext/lib64/libwfduibcinterface.so
+system_ext/lib64/libwfduibcsinkinterface.so
+system_ext/lib64/libwfduibcsrc.so
+system_ext/lib64/libwfduibcsrcinterface.so
+system_ext/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
+system_ext/lib64/vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk.so
 vendor/bin/wfdhdcphalservice
 vendor/bin/wfdvndservice
 vendor/bin/wifidisplayhalservice
@@ -2652,6 +2722,7 @@ vendor/lib64/libwfdsessionmodule.so
 vendor/lib64/libwfdsourcesession_proprietary.so
 vendor/lib64/libwfdsourcesm_proprietary.so
 vendor/lib64/libwfduibcinterface_vendor.so
+system_ext/lib64/libwfduibcsink.so
 vendor/lib64/libwfduibcsink_vendor.so
 vendor/lib64/libwfduibcsinkinterface_vendor.so
 vendor/lib64/libwfduibcsrc_vendor.so
