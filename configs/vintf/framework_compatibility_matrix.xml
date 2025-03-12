@@ -128,4 +128,12 @@
             <instance>default</instance>
         </interface>
     </hal>
+        <hal format="aidl" optional="true">
+        <name>vendor.oplus.hardware.communicationcenter</name>
+        <version>1-2</version>
+        <interface>
+            <name>IDmtpService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>
