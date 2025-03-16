@@ -1,16 +1,8 @@
 # Architecture
 TARGET_ARCH := arm64
-TARGET_ARCH_VARIANT := armv8-a-branchprot
+TARGET_ARCH_VARIANT := armv9-a
 TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := generic
-TARGET_CPU_VARIANT_RUNTIME := kryo300
-
-TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv8-2a
-TARGET_2ND_CPU_ABI := armeabi-v7a
-TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a75
+TARGET_CPU_VARIANT := kryo785
 
 # AVB
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
@@ -110,11 +102,12 @@ BOARD_KERNEL_CMDLINE := msm_geni_serial.con_enabled=0
 
 BOARD_BOOTCONFIG:= \
     androidboot.hardware=qcom \
-    androidboot.init_fatal_reboot_target=recovery \
     androidboot.memcg=1 \
     androidboot.usbcontroller=a600000.dwc3
+#    androidboot.init_fatal_reboot_target=recovery \
 
-BOARD_BOOTCONFIG += androidboot.selinux=permissive
+
+#BOARD_BOOTCONFIG += androidboot.selinux=permissive
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
@@ -151,8 +144,6 @@ BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 201326592
 # Partitions - Usage
 BOARD_USES_METADATA_PARTITION := true
 BOARD_USES_VENDOR_DLKMIMAGE := true
-
-LOCAL_CHECK_ELF_FILES := false
 
 # Recovery
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
